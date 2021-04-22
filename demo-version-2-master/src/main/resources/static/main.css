@@ -1,0 +1,17 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+main {
+    height: 500px;
+    width: 500px;
+    background-color: brown;
+    color: white;
+    border: 1px solid black;
+}

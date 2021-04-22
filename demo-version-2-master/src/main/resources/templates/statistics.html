@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <script th:inline="javascript">
+    window.onload = function() {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light2",
+        exportEnabled: true,
+        animationEnabled: true,
+        title: {
+          text: "Круговая диаграмма"
+        },
+        data: [{
+          type: "pie",
+          startAngle: 25,
+          toolTipContent: "<b>{label}</b>: {y}",
+          showInLegend: "true",
+          legendText: "{label}",
+          indexLabelFontSize: 16,
+          indexLabel: "{label} - {y}",
+          dataPoints: [
+            { y: [[${count1}]], label: [[${word1}]] },
+            { y: [[${count2}]], label: [[${word2}]] },
+            { y: [[${count3}]], label: [[${word3}]] },
+            { y: [[${count4}]], label: [[${word4}]] },
+            { y: [[${count5}]], label: [[${word5}]] },
+          ]
+        }]
+      });
+      chart.render();
+    }
+  </script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+<script th:src="@{canvasjs.min.js}"></script>
+</body>
+</html>
